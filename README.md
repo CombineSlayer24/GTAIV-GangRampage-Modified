@@ -1,6 +1,6 @@
 # GangRampage Mod: Enhanced Edition
 
-An enhanced version / modified version of the original GangRampage Mod, which can be found [here](https://www.gtainside.com/en/gta4/mods/189518-gangrampage-mod/). This aim to improve the script with new features and tweaks. As well, this is my first time messing with C#.
+An enhanced version / modified version of the original GangRampage Mod, which can be found [here](https://www.gtainside.com/en/gta4/mods/189518-gangrampage-mod/). This aims to improve the script with new features and tweaks. As well, this is my first time messing with C#.
 ![image](https://github.com/CombineSlayer24/GTAIV-GangRampage-Modified/assets/82725572/0766c5f1-7874-4185-bac4-f5e528629dbc)
 
 ### Requirements:
@@ -27,7 +27,6 @@ Place the .cs file in `scripts` folder, which should be inside `GTAIV`.
 
 # Gameplay Tweaks
 - The interval for spawning enemies has been increased.
-- The maximum limit for enemies is now set between 2 and 8.
 - Enemies health has been slightly increased, and max health will be random.
 - The number of occupants in vehicles is randomized, rather than being fixed at 2.
 - Vehicles driven by Hitmen will now face the player upon spawning and will gain a small acceleration boost to catch up.
