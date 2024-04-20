@@ -9,7 +9,7 @@ Now this is kinda tricky since different versions and what not, but my game vers
 So, it may work with 1.0.7.0 and Complete Edition (Maybe???? I do not know. I don't play CE)
 
 ### Installation:
-Place the .cs file in `scripts` folder, which should be inside `GTAIV`.
+Place the  `scripts` folder inside `GTAIV`. Should be `Grand Theft Auto IV/GTAIV/scripts/gangRampageV2.cs`
 
 # New Gangs
 - **LCPD Gang**
