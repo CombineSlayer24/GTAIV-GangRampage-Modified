@@ -2,6 +2,9 @@
 
 An enhanced version / modified version of the original GangRampage Mod, which can be found [here](https://www.gtainside.com/en/gta4/mods/189518-gangrampage-mod/). This aims to improve the script with new features and tweaks. As well, this is my first time messing with C#.
 ![image](https://github.com/CombineSlayer24/GTAIV-GangRampage-Modified/assets/82725572/0766c5f1-7874-4185-bac4-f5e528629dbc)
+![image](https://github.com/CombineSlayer24/GTAIV-GangRampage-Modified/assets/82725572/5899f389-fcda-4a06-8095-72a5173b4a09)
+![image](https://github.com/CombineSlayer24/GTAIV-GangRampage-Modified/assets/82725572/0dfd96f8-57fb-42ab-9650-a34a91975d7a)
+![image](https://github.com/CombineSlayer24/GTAIV-GangRampage-Modified/assets/82725572/8c8b715e-2fef-4949-adb6-db6944286fef)
 
 ### Requirements:
 Now this is kinda tricky since different versions and what not, but my game version is **1.0.8.0**, using a [1.0.8.0 ScriptHookDotNet patch](https://gtaforums.com/topic/946154-release-gtaiv-net-scripthook-v1718-support-for-gta-iv-1080-and-eflc-1130-by-arinc9-zolika1351/)
