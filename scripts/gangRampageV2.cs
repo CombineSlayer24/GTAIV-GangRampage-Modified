@@ -553,85 +553,84 @@ namespace GangRampageCS
 			switch ( state )
 			{
 				case eState.Running:
-				int enemiesCanFight = 0;
-				int alliesCanFight = 0;
-				foreach ( Ped pEnemy in spawnedEnemies )
-				{
-					float pedDistance = pEnemy.Position.DistanceTo( Player.Character.Position );
-
-					// Check if the enemy is in a vehicle
-					bool isInVehicle = pEnemy.isInVehicle();
-
-					// Use a larger distance threshold if the enemy is in a vehicle
-					float distanceThreshold = isInVehicle ? 150.0F : 110.0F;
-
-					// Make sure our ped is alive and not far away from the player.
-					// If they aren't, then they are able to fight.
-					if ( pEnemy.isAliveAndWell && pedDistance < distanceThreshold )
-						enemiesCanFight++;
-					else // If not, then put them in the pool to be removed
-						enemiesToDel.Add( pEnemy );
-				}
-
-				// Cull any far peds, or dead peds
-				foreach ( Ped pEnemyRemove in enemiesToDel )
-				{
-					spawnedEnemies.Remove( pEnemyRemove );
-					pEnemyRemove.NoLongerNeeded();
-				}
-
-				enemiesToDel.Clear();
-
-				// Same thing for Ally Peds.
-				foreach ( Ped ally in spawnedAlly )
-				{
-					float pedAllyDistance = ally.Position.DistanceTo( Player.Character.Position );
-					
-					if ( ally.isAliveAndWell && pedAllyDistance < 110.0F )
-						alliesCanFight++;
-					else
-						alliesToDel.Add( ally );
-				}
-
-				foreach ( Ped allydel in alliesToDel )
-				{
-					spawnedAlly.Remove( allydel );
-					allydel.NoLongerNeeded();
-				}
-
-				alliesToDel.Clear();
-
-				//Game.DisplayText("Can Fight Enemies : " + enemiesCanFight);
-				if ( enemiesCanFight < maxEnemies )
-				{
-					Vector3 pos;
-					if (GetRandomNumber( 100 ) > 25 )
+					int enemiesCanFight = 0;
+					int alliesCanFight = 0;
+					foreach ( Ped pEnemy in spawnedEnemies )
 					{
-						pos = Player.Character.Position.Around( GetRandomNumber( 30, 60 ) );
-						SpawnFootEnemy( pos );
+						float pedDistance = pEnemy.Position.DistanceTo( Player.Character.Position );
+
+						// Check if the enemy is in a vehicle
+						bool isInVehicle = pEnemy.isInVehicle();
+
+						// Use a larger distance threshold if the enemy is in a vehicle
+						float distanceThreshold = isInVehicle ? 150.0F : 110.0F;
+
+						// Make sure our ped is alive and not far away from the player.
+						// If they aren't, then they are able to fight.
+						if ( pEnemy.isAliveAndWell && pedDistance < distanceThreshold )
+							enemiesCanFight++;
+						else // If not, then put them in the pool to be removed
+							enemiesToDel.Add( pEnemy );
 					}
-					else
+
+					// Cull any far peds, or dead peds
+					foreach ( Ped pEnemyRemove in enemiesToDel )
 					{
-						pos = Player.Character.Position.Around( GetRandomNumber( 60, 80 ) );
-						SpawnVehicleEnemy( pos );
+						spawnedEnemies.Remove( pEnemyRemove );
+						pEnemyRemove.NoLongerNeeded();
 					}
-				}
+
+					enemiesToDel.Clear();
+
+					// Same thing for Ally Peds.
+					foreach ( Ped ally in spawnedAlly )
+					{
+						float pedAllyDistance = ally.Position.DistanceTo( Player.Character.Position );
+						
+						if ( ally.isAliveAndWell && pedAllyDistance < 110.0F )
+							alliesCanFight++;
+						else
+							alliesToDel.Add( ally );
+					}
+
+					foreach ( Ped allydel in alliesToDel )
+					{
+						spawnedAlly.Remove( allydel );
+						allydel.NoLongerNeeded();
+					}
+
+					alliesToDel.Clear();
+
+					//Game.DisplayText("Can Fight Enemies : " + enemiesCanFight);
+					if ( enemiesCanFight < maxEnemies )
+					{
+						Vector3 pos;
+						if (GetRandomNumber( 100 ) > 25 )
+						{
+							pos = Player.Character.Position.Around( GetRandomNumber( 30, 60 ) );
+							SpawnFootEnemy( pos );
+						}
+						else
+						{
+							pos = Player.Character.Position.Around( GetRandomNumber( 60, 80 ) );
+							SpawnVehicleEnemy( pos );
+						}
+					}
+
+					/* if ( alliesCanFight < maxAllies )
+					{
+						Vector3 pos;
+						if (GetRandomNumber( 100 ) > 75 )
+						{
+							pos = Player.Character.Position.Around( GetRandomNumber( 30, 60 ) );
+							SpawnFootAlly( pos );
+						}
+						else
+						{
+							return; // Do not spawn our ally if RNG is low.
+						}
+					} */
 				break;
-
-				/* if ( alliesCanFight < maxAllies )
-				{
-					Vector3 pos;
-					if (GetRandomNumber( 100 ) > 75 )
-					{
-						pos = Player.Character.Position.Around( GetRandomNumber( 30, 60 ) );
-						SpawnFootAlly( pos );
-					}
-					else
-					{
-						return; // Do not spawn our ally if RNG is low.
-					}
-				}
-				break; */
 			}
 		}
 
